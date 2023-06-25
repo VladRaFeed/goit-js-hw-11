@@ -1,29 +1,34 @@
 {
-  "name": "my_template",
+  "name": "goit-js-hw-11",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://vladrafeed.github.io/my_template",
+  "homepage": "https://vladrafeed.github.io/goit-js-hw-11",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /my_template/"
+    "build": "parcel build src/*.html --public-url /goit-js-hw-11/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goitacademy/my_template.git"
+    "url": "git+https://github.com/vladrafeed/goit-js-hw-11.git"
   },
   "keywords": [],
   "author": "Vladyslav Zhyr <jack22toplolkek@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vladrafeed/my_template/issues"
+    "url": "https://github.com/vladrafeed/goit-js-hw-11/issues"
   },
   "dependencies": {
-    "modern-normalize": "^1.1.0"
+    "axios": "^1.4.0",
+    "modern-normalize": "^1.1.0",
+    "notiflix": "^3.2.6",
+    "simplelightbox": "^2.14.1"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
+    "buffer": "^6.0.3",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
+    "parcel-transformer-hbs": "^1.0.4",
     "posthtml-include": "^1.7.4"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead"
