@@ -23,7 +23,7 @@ function onSearch(e) {
 
   disableBtn();
 
-  ImagesApi.inputValue = formInput.value;
+  ImagesApi.inputValue = formInput.value.trim();
   if (ImagesApi.inputValue === '') {
     return Notiflix.Notify.failure(
       'Sorry, there are no images matching your search query. Please try again'
@@ -43,10 +43,18 @@ async function createGallery() {
 
     const data = await ImagesApi.fetchArticles();
 
+    console.log(data);
+
     if (data.totalHits === 0) {
       return Notiflix.Notify.failure(
         'Sorry, there are no images matching your search query. Please try again'
       );
+    }
+
+    if (data.totalHits < 40) {
+      disableBtn();
+    } else {
+      unDisableBtn();
     }
 
     createMarkup(data.hits);
@@ -55,8 +63,6 @@ async function createGallery() {
     Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`);
 
     // ImagesApi.fetchArticles().then(createMarkup);
-
-    unDisableBtn();
   } catch (error) {
     console.log(error);
   }
